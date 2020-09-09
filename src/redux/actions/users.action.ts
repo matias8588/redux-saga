@@ -5,22 +5,22 @@ const getUsersRequest: any = (data: any) => ({
   data,
 });
 
-export const getUsersSuccess: any = (data: any) => ({
+const getUsersSuccess: any = (data: any) => ({
   type: Types.GET_USERS_SUCCESS,
   data,
 });
 
-export const createUserRequest: any = (data: any) => ({
+const createUserRequest: any = (data: any) => ({
   type: Types.CREATE_USER_REQUEST,
   data,
 });
 
-export const deleteUserRequest: any = (data: any) => ({
+const deleteUserRequest: any = (data: any) => ({
   type: Types.DELETE_USER_REQUEST,
   data,
 });
 
-export const usersError: any = (data: any) => ({
+const usersError: any = (data: any) => ({
   type: Types.USERS_ERROR,
   data,
 });
@@ -30,6 +30,7 @@ export const usersActions = {
   createUserRequest,
   deleteUserRequest,
   usersError,
+  getUsersSuccess,
 };
 
 export default usersActions;
