@@ -36,6 +36,7 @@
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", "tsx"] }
-    ]
+    ],
+    "no-use-before-define": ["warn", { "variables": false }]
   }
 }

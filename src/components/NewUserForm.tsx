@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewUserForm = () => (
+const NewUserForm: React.FC = () => (
   <div>
     <h1>test</h1>
     form
