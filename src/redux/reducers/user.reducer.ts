@@ -1,7 +1,7 @@
 import Types from '../constants/user.constant';
 
 const INITIAL_STATE = {
-  items: [],
+  list: [],
 };
 
 const users = (state = INITIAL_STATE, action: any) => {
@@ -9,7 +9,7 @@ const users = (state = INITIAL_STATE, action: any) => {
     case Types.GET_USERS_SUCCESS: {
       return {
         ...state,
-        items: action.data,
+        list: action.data,
       };
     }
     case Types.USERS_ERROR: {

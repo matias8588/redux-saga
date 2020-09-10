@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { usersActions } from '../redux/actions/users.action';
+import UserList from './UserList';
+import NewUserForm from './NewUserForm';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-  dispatch(usersActions.getUsersRequest());
+  useEffect(() => {
+    dispatch(usersActions.getUsersRequest());
+  });
+
   return (
     <>
       <CssBaseline />
       <Container maxWidth="sm">
-        <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
-        test
+        <NewUserForm />
+        <UserList />
       </Container>
     </>
   );
