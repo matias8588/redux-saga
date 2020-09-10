@@ -5,12 +5,13 @@ import actions from '../actions/users.action';
 import constants from '../constants/user.constant';
 import * as api from '../../api/users';
 
+const errorMessage = 'Error ocurred';
 function* getUsers() {
   try {
     const result = yield call(api.getUsers);
     yield put(actions.getUsersSuccess(result.data.data));
   } catch (error) {
-    console.error(error);
+    yield put(actions.usersError({ error: errorMessage }));
   }
 }
 
@@ -25,7 +26,7 @@ function* createUser(action: any) {
     yield call(api.createUser, { firstName: data.firstName, lastName: data.lastName });
     yield call(getUsers);
   } catch (error) {
-    console.error(error);
+    yield put(actions.usersError({ error: errorMessage }));
   }
 }
 
@@ -38,7 +39,7 @@ function* deleteUser(action: any) {
     yield call(api.deleteUser, action.userId);
     yield call(getUsers);
   } catch (error) {
-    console.error(error);
+    yield put(actions.usersError({ error: errorMessage }));
   }
 }
 

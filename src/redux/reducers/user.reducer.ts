@@ -2,6 +2,7 @@ import Types from '../constants/user.constant';
 
 const INITIAL_STATE = {
   list: [],
+  error: '',
 };
 
 const users = (state = INITIAL_STATE, action: any) => {
@@ -13,6 +14,7 @@ const users = (state = INITIAL_STATE, action: any) => {
       };
     }
     case Types.USERS_ERROR: {
+      console.log(action);
       return {
         ...state,
         error: action.data.error,
